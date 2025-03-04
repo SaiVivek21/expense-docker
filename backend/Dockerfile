@@ -4,10 +4,10 @@ FROM node:20.18.3-alpine3.21
 # on top of IC-1 instruction-2 is executed and save this as layer-2 image. IC-2 is removed
 RUN addgroup -S expense && adduser -S expense -G expense && \
 # create IC-2 on top of IC-2 instruction-3 is executed and save this as layer-3. IC-2 is removed
-    mkdir /opt/backend\
+    mkdir /opt/backend \
     chown -R expense:expense /opt/backend
 WORKDIR /opt/backend
-COPY package.json .
+COPY package.json ./
 COPY *.js ./
 RUN npm install
 ENV DB_HOST="mysql"
